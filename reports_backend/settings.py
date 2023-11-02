@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p(m68oufh7_i2tym*g($i$7rh4xo1^=^9!kiv2mr73^1yd)d$q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'reports_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'group_details',
-        'USER': 'postgres',
-        'PASSWORD': '1509',
-        'HOST': '127.0.0.1',
+        'NAME': 'reports',
+        'USER': 'sachin',
+        'PASSWORD': 'sachin972',
+        'HOST': 'reports-db.c9la0v6zow8i.ap-south-1.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
