@@ -1,2 +1,2 @@
 Django==4.2.6
-psql==16.0
+postgres==16.0
