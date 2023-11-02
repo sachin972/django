@@ -40,3 +40,21 @@ def RemoveGlMasterView(request, id):
         return HttpResponse({"message": "Deleted"})
     else:
         return HttpResponse({"Some Error Occured"})
+    
+
+def UpdateGlMasterView(request, id):
+    data = json.loads(request.body)
+    curr = GlMasterModel.objects.get(pk=id)
+    print(curr)
+    # GroupModel.objects.update()
+
+    curr.gl_code=data["code"],
+    curr.gl_name=data["name"],
+    curr.gl_type=data["type"],
+    curr.gl_balance=data["balance"],
+    # curr.# gl_type=data[""],
+    curr.gl_balance_type=data["balanceType"],
+    curr.sub_group=SubGroupModel.objects.get(pk=data["subGroup"])
+    curr.save()
+    
+    return HttpResponse({'message': "Successfully updated"})

@@ -37,6 +37,17 @@ def RemoveSubGroup(request, id):
     data.delete()
     return HttpResponse({'message': "Removed"})
 
-def UpdateSubGroup(request):
+def UpdateSubGroup(request, id):
     print(request.body)
+    data = SubGroupModel.objects.get(pk = id)
+    recieved = json.loads(request.body)
+    
+    data.sub_group_code=recieved["code"],
+    data.sub_group_name=recieved["name"],
+
+    # group_type=data["type"],
+    # group_balance=data["balance"]
+    data.group=GroupModel.objects.get(pk=recieved["group"])
+    data.save()
+    
     return HttpResponse({'message': "Updated"})
