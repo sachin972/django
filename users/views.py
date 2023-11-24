@@ -25,6 +25,7 @@ def SignupView(request):
         email=email["email"],
         name="some name"
     )
+    print(UsersModel.objects.all())
     return HttpResponse({
         "message": "Logged out"
     })
