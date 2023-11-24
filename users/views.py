@@ -20,7 +20,9 @@ def SignupView(request):
     print(request.body)
     email = json.loads(request.body)
     
-    UsersModel.objects.create(email=email["email"])
+    UsersModel.objects.create(
+        _id=email["id"],
+        email=email["email"])
     return HttpResponse({
         "message": "Logged out"
     })
