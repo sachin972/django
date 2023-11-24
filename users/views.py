@@ -22,7 +22,9 @@ def SignupView(request):
     
     UsersModel.objects.create(
         _id=email["id"],
-        email=email["email"])
+        email=email["email"],
+        name="some name"
+    )
     return HttpResponse({
         "message": "Logged out"
     })
